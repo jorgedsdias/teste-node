@@ -1,10 +1,9 @@
 import { Router } from 'express';
-import { Request, Response } from 'express';
+import Controlador from './controlador';
 
 const routes = Router();
+const controlador = new Controlador();
 
-routes.get('/', (req: Request, res: Response) => {
-    res.json({ "Testando" : "Testando..." });
-});
+routes.get('/', controlador.index);
 
 export default routes;
